@@ -12,12 +12,17 @@ class State {
 class StandingLeft extends State {
     constructor(player) {
         super('STANDING LEFT');
-        this.player = player
+        this.player = player;
     }
-    enter() {
+    enter() {}
+    handleInput() {}
+}
 
+class StandingRight extends State {
+    constructor(player) {
+        super('STANDING RIGHT');
+        this.player = player;
     }
-    handleInput(){
-        
-    }
+    enter() {}
+    handleInput() {}
 }
