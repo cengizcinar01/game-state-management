@@ -1,6 +1,6 @@
 export const states = {
-    STANDING_LEFT: 0,
-    STANDING_RIGHT: 1,
+    STANDING_LEFT: '0',
+    STANDING_RIGHT: '1',
 };
 
 class State {
@@ -14,11 +14,15 @@ export class StandingLeft extends State {
         super('STANDING LEFT');
         this.player = player;
     }
+
     enter() {
         this.player.frameY = 1;
     }
-    handleInput() {
-        if (input === 'PRESS right') this.player.setState(states.STANDING_RIGHT);
+
+    handleInput(input) {
+        if (input === 'PRESS right') {
+            this.player.setState(states.STANDING_RIGHT);
+        }
     }
 }
 
@@ -27,10 +31,14 @@ export class StandingRight extends State {
         super('STANDING RIGHT');
         this.player = player;
     }
+
     enter() {
         this.player.frameY = 0;
     }
+
     handleInput(input) {
-        if (input === 'PRESS left') this.player.setState(states.STANDING_LEFT);
+        if (input === 'PRESS left') {
+            this.player.setState(states.STANDING_LEFT);
+        }
     }
 }
