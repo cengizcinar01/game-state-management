@@ -1,4 +1,4 @@
-import { StandingLeft, StandingRight, SittingLeft, SittingRight, RunningLeft, RunningRight, JumpingLeft, JumpingRight } from './state.js';
+import { StandingLeft, StandingRight, SittingLeft, SittingRight, RunningLeft, RunningRight, JumpingLeft, JumpingRight, FallingLeft, FallingRight } from './state.js';
 
 export default class Player {
     constructor(gameWidth, gameHeight) {
@@ -13,6 +13,8 @@ export default class Player {
             new RunningRight(this),
             new JumpingLeft(this),
             new JumpingRight(this),
+            new FallingLeft(this),
+            new FallingRight(this),
         ];
         this.currentState = this.states[1];
         this.image = document.getElementById('dogImage');
